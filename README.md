@@ -16,6 +16,10 @@ Describe: playerRound()
 Test: Simulates a user throwing a dice and returning the value for one dice roll.
 Expect: playerRound().toEqual(1-6)
 
+#### Test 3:
+Describe: playerRound()
+Test: Takes in a user input if they'd like to keep rolling, otherwise stop.
+Expect: playerRound(true).toEqual(2-100)
 
 
 ## *Setup Instructions:*
