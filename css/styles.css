@@ -1,9 +1,18 @@
-h1 {
-  text-align: center;
-  margin: 30px;
+body {
+    text-align: center;
 }
 
-p {
-  text-align: center;
-  margin: 30px;
+#dice-roll, #dice-number, .round, .dice-container {
+    display: none;
 }
+
+.dice-container {
+    border: solid black 2px;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+

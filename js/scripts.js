@@ -1,6 +1,6 @@
 // business logic
 function Game(player, isDone) {
-  this.player = {};
+  this.player = player;
   this.isDone = false;
 }
 
@@ -35,9 +35,6 @@ function playerRound (continueRolling) {
       currentPoints = currentPoints + rollDice();
     }
 
-    // Dependning on the user's input, if they chose "No" or to not continue, the user input would be false.
-    // If it's false then the round is over.
-    // Reassign isRoundDone to false to break out of the While Loop.
     if(continueRolling === false) {
       gameOver = true;
     }
@@ -49,11 +46,36 @@ function playerRound (continueRolling) {
 
 
 
-
 // User Interface Logic
 
-let newPlayer = new Player("playerOne", 0, 0, 0)
-console.log(newPlayer)
+$(document).ready(function() {
+  let turn = 0;
+
+  $("#start-btn").click(function() {
+    let newPlayer = new Player("playerOne", 0, 0, 0)
+    let newGame = new Game(newPlayer, false)
+
+    $("#start-btn").hide();
+    $("#dice-roll").show();
+    $(".dice-container").show()
+
+  });
+
+  $("#dice-roll").click(function() {
+    let tempNum = rollDice();
+    $("#dice-number").fadeOut(100);
+    $("#dice-number").fadeIn(500);
+    $("#dice-number").text(tempNum);
+    turn++;
+
+    if(turn > 0) {
+      $(".round").show();
+    }
+
+    // $("#score").text(currentPoints);
+  });
+
+});
 
 
 // Notes:
@@ -65,6 +87,3 @@ console.log(newPlayer)
 // - can roll infinite but IF rolled 1, all CURRENT cumunlated points  = 0 during that turn/round
 // - IF stopped rolling, then points banked (aka that round)
 // - increment by 1 for every roll for +1 point to current
-
-
-

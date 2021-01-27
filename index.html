@@ -11,5 +11,20 @@
 <body>
   <h1>PIG DICE</h1>
   <p>Pig dice is a simple dice game which in its basic form is playable with just a single dice. You win by being the first player to score 100 or more points</p>
+
+  <button type="click" id="start-btn" class="btn btn-success">Start Game</button>
+  <div id="output">
+    <button type="click" id="dice-roll" class="btn btn-info"> Roll Dice </button>
+    <div class="dice-container">
+      <p id="dice-number"></p>
+    </div>
+    <br>
+    <h3 class="round">Do you want to end your turn?</h3>
+    <button type="click" id="continue-yes" class="btn btn-danger round" > Stop </button>
+    <button type="click" id="continue-no" class="btn btn-success round"> Roll </button>
+
+    <br>
+    <h1 class="round"> Current Score: <span id="score"></span></h1>
+  </div>
 </body>
 </html>
