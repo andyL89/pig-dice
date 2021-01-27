@@ -23,11 +23,20 @@ function rollDice () {
   return Math.trunc(randomNumber);
 }
 
-    /* 
-    choose a random number between 1-6
-    print number selected
-    add numbers except when number is one or player stops rolling dice 
-   */
+function playerRound () {
+  let currentPoints = 0;
+  if (rollDice() === 1) {
+    currentPoints = 0
+  } else {
+    currentPoints = currentPoints + rollDice()
+  }
+  return currentPoints;
+}
+
+/* record what happens in a turn when rolling a dice
+  if you hit 1 your count go to 0
+  sum of the numbers +1 except 1 
+*/
 
 // User Interface Logic
 

@@ -11,6 +11,12 @@ Describe: rollDice()
 Test: It should return a random whole number between 1-6.
 Expect: rollDice().toEqual(1-6)
 
+#### Test 2:
+Describe: playerRound()
+Test: Simulates a user throwing a dice and returning the value for one dice roll.
+Expect: playerRound().toEqual(1-6)
+
+
 
 ## *Setup Instructions:*
 
