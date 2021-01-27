@@ -1,5 +1,5 @@
 // business logic
-function Game (player, isDone) {
+function Game(player, isDone) {
   this.player = {};
   this.isDone = false;
 }
@@ -23,20 +23,32 @@ function rollDice () {
   return Math.trunc(randomNumber);
 }
 
-function playerRound () {
+function playerRound (continueRolling) {
   let currentPoints = 0;
-  if (rollDice() === 1) {
-    currentPoints = 0
-  } else {
-    currentPoints = currentPoints + rollDice()
+  let gameOver = false;
+
+  while(gameOver) {
+    if(rollDice() === 1) {
+      currentPoints = 0;
+      gameOver = true;
+    } else {
+      currentPoints = currentPoints + rollDice();
+    }
+
+    // Dependning on the user's input, if they chose "No" or to not continue, the user input would be false.
+    // If it's false then the round is over.
+    // Reassign isRoundDone to false to break out of the While Loop.
+    if(continueRolling === false) {
+      gameOver = true;
+    }
+
   }
+
   return currentPoints;
 }
 
-/* record what happens in a turn when rolling a dice
-  if you hit 1 your count go to 0
-  sum of the numbers +1 except 1 
-*/
+
+
 
 // User Interface Logic
 
@@ -44,29 +56,15 @@ let newPlayer = new Player("playerOne", 0, 0, 0)
 console.log(newPlayer)
 
 
+// Notes:
+// - 2 or more players
+// - 1 die
+// - First player to 100 pts
+// - avoid 1
+// - roll 2 - 6
+// - can roll infinite but IF rolled 1, all CURRENT cumunlated points  = 0 during that turn/round
+// - IF stopped rolling, then points banked (aka that round)
+// - increment by 1 for every roll for +1 point to current
 
 
-// function Human(hairColor, numberOfEyes, height) {
-//     this.hairColor = hairColor;
-//     this.numberOfEyes = 2;
-//     this.height = height;
-// }
-// let andy = new Human("brown", 2, "6'1")
-// console.log(andy)
 
-/*
-
-Notes:
-- 2 or more players
-- 1 die
-- First player to 100 pts
-- avoid 1
-- roll 2 - 6
-- can roll infinite but IF rolled 1, all CURRENT cumunlated points  = 0 during that turn/round
-- IF stopped rolling, then points banked (aka that round)
-- increment by 1 for every roll for +1 point to current
-
-*/
-
-// (Math.random() * 8) + 2
-// (Math.random() * MAXNUMBER) + MINNUMBER
