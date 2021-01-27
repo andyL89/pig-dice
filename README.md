@@ -7,9 +7,9 @@
 
 ## *Tests*
 #### Test 1:
-Describe: 
-Test: 
-Expect: 
+Describe: rollDice()
+Test: It should return a random whole number between 1-6.
+Expect: rollDice().toEqual(1-6)
 
 
 ## *Setup Instructions:*
@@ -35,3 +35,5 @@ Expect:
 ## Contact Information
 
 Andrew Lawson : alawson89@gmail.com
+Sofia Acosta : sofiaacostarascon@gmail.com
+Tien Nguyen : tien96ng@gmail.com

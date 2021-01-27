@@ -5,12 +5,10 @@ function Game (player, isDone) {
 }
 
 /*
-
 What a player needs:
 - User's total points
 - User's current banked points
 - How many times a user has rolled
-
 */
 
 function Player (name, userTotal, rollCount, currentRollTotal) {
@@ -20,7 +18,16 @@ function Player (name, userTotal, rollCount, currentRollTotal) {
   this.currentRollTotal = 0;
 }
 
+function rollDice () {
+  let randomNumber = (Math.random() * 6) + 1;
+  return Math.trunc(randomNumber);
+}
 
+    /* 
+    choose a random number between 1-6
+    print number selected
+    add numbers except when number is one or player stops rolling dice 
+   */
 
 // User Interface Logic
 
@@ -48,5 +55,9 @@ Notes:
 - roll 2 - 6
 - can roll infinite but IF rolled 1, all CURRENT cumunlated points  = 0 during that turn/round
 - IF stopped rolling, then points banked (aka that round)
+- increment by 1 for every roll for +1 point to current
 
 */
+
+// (Math.random() * 8) + 2
+// (Math.random() * MAXNUMBER) + MINNUMBER
