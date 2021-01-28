@@ -2,7 +2,7 @@ body {
     text-align: center;
 }
 
-#dice-roll, #dice-number, .round, .dice-container {
+#dice-roll, #dice-number, .round, .dice-container, #roll-1, #winner, #next-round {
     display: none;
 }
 
@@ -12,6 +12,10 @@ body {
     height: 30px;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+#roll-1 {
+    color: red;
 }
 
 

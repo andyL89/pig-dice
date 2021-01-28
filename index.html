@@ -14,17 +14,26 @@
 
   <button type="click" id="start-btn" class="btn btn-success">Start Game</button>
   <div id="output">
-    <button type="click" id="dice-roll" class="btn btn-info"> Roll Dice </button>
+    <button type="click" id="dice-roll" class="btn btn-info"> Roll </button>
     <div class="dice-container">
       <p id="dice-number"></p>
     </div>
     <br>
-    <h3 class="round">Do you want to end your turn?</h3>
-    <button type="click" id="continue-yes" class="btn btn-danger round" > Stop </button>
-    <button type="click" id="continue-no" class="btn btn-success round"> Roll </button>
-
+    <button type="click" id="stop-rolling" class="btn btn-danger round" > Stop Rolling </button>
     <br>
+    <br>
+    <h1 class="round"> Round: <span id="round-number"></span></h1>
+    <h1 class="round"> # of Rolls: <span id="times-rolled"></span></h1>
     <h1 class="round"> Current Score: <span id="score"></span></h1>
+    <h1 class="round"> Banked Total: <span class="total"></span></h1>
+    
   </div>
+  <button type="click" id="next-round" class="btn btn-success" > Start Next Round </button>
+  <h1 id="roll-1">YOU ROLLED A 1, ROUND OVER NO POINTS!</h1>
+  
+  <div id="winner">
+    <h1>Congralutions <span class="user-name"></span> on winning with <span class="total"></span> points!</h1>
+  </div>
+
 </body>
 </html>
